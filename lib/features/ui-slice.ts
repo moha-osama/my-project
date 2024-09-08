@@ -6,10 +6,13 @@ const isDesktop = () => {
 
 const uiSlice = createSlice({
   name: "ui",
-  initialState: { drawerIsOpen: false },
+  initialState: { drawerIsOpen: false, mainIsOpen: false },
   reducers: {
     toggleDrawer: (state) => {
       state.drawerIsOpen = !state.drawerIsOpen;
+    },
+    toggleMain(state) {
+      state.mainIsOpen = !state.mainIsOpen;
     },
   },
 });

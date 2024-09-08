@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { hydrateRoot } from "react-dom/client";
 import StoreProvider from "./StoreProvider";
 import { Box } from "@mui/material";
+import NewTask from "@/components/NewTask/NewTask";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -33,15 +34,16 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
         >
           <Header />
           <aside>
             <Aside />
           </aside>
-          <main className="md:ml-60 mt-16 w-full md:w-[calc(100%-240px)]">
+          <main className="md:ml-60 mt-44 w-full md:w-[calc(100%-240px)] bg-[#FAFAFA]">
             {children}
           </main>
+          <NewTask />
         </body>
       </html>
     </StoreProvider>

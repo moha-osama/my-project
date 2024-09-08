@@ -13,6 +13,8 @@ import Avatar from "@mui/material/Avatar";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 
+import SearchAndFilter from "./SearchAndFilter";
+
 import { useAppSelector, useAppDispatch, useAppStore } from "@/lib/store/hooks";
 import { uiActions } from "@/lib/features/ui-slice";
 
@@ -56,6 +58,8 @@ function Header() {
       sx={{
         width: { md: `calc(100% - ${drawerWidth}px)` },
         ml: { sm: `${drawerWidth}px` },
+        background: "white",
+        boxShadow: "none",
       }}
     >
       <Container maxWidth="xl">
@@ -67,7 +71,7 @@ function Header() {
             onClick={handleDrawerToggle}
             sx={{ mr: 2, display: { md: "none" } }}
           >
-            <MenuIcon />
+            <MenuIcon sx={{ color: "black" }} />
           </IconButton>
           <Typography
             variant="h6"
@@ -77,7 +81,9 @@ function Header() {
             sx={{
               flexGrow: 1,
               mr: 2,
-              color: "inherit",
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              color: "#141522",
               textDecoration: "none",
             }}
           >
@@ -115,6 +121,9 @@ function Header() {
             </Menu>
           </Box>
         </Toolbar>
+        <Box component="div" sx={{ padding: "2rem 0" }}>
+          <SearchAndFilter />
+        </Box>
       </Container>
     </AppBar>
   );

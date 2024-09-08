@@ -65,7 +65,7 @@ export default function Aside(props: Props) {
           <ChevronLeftIcon sx={{ display: { xs: "", md: "none" } }} />
         </IconButton>
       </Toolbar>
-      <Divider />
+      {/* <Divider /> */}
       <List>
         {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -127,6 +127,7 @@ export default function Aside(props: Props) {
             "& .MuiDrawer-paper": {
               boxSizing: "border-box",
               width: drawerWidth,
+              border: "none",
             },
           }}
           open={drawerIsOpen}
