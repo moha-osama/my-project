@@ -16,7 +16,8 @@ import MailIcon from "@mui/icons-material/Mail";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import Toolbar from "@mui/material/Toolbar";
 import { IconButton, Typography } from "@mui/material";
-
+import StarIcon from "@mui/icons-material/Star";
+import TaskIcon from "@mui/icons-material/Task";
 import { useAppSelector, useAppDispatch, useAppStore } from "@/lib/store/hooks";
 import { uiActions } from "@/lib/features/ui-slice";
 
@@ -65,13 +66,12 @@ export default function Aside(props: Props) {
           <ChevronLeftIcon sx={{ display: { xs: "", md: "none" } }} />
         </IconButton>
       </Toolbar>
-      {/* <Divider /> */}
       <List>
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {["Tasks"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <TaskIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -80,11 +80,11 @@ export default function Aside(props: Props) {
       </List>
       <Divider />
       <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
+        {["Starred"].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <StarIcon /> : <MailIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>

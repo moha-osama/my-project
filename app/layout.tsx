@@ -7,7 +7,7 @@ import { Provider } from "react-redux";
 import { hydrateRoot } from "react-dom/client";
 import StoreProvider from "./StoreProvider";
 import { Box } from "@mui/material";
-import NewTask from "@/components/NewTask/NewTask";
+import NewTask from "@/components/Tasks/NewTask";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -40,7 +40,7 @@ export default function RootLayout({
           <aside>
             <Aside />
           </aside>
-          <main className="md:ml-60 mt-44 w-full md:w-[calc(100%-240px)] bg-[#FAFAFA]">
+          <main className="md:ml-60 mt-48 px-4 w-full md:w-[calc(100%-240px)] bg-[#FAFAFA]">
             {children}
           </main>
           <NewTask />
