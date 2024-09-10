@@ -7,7 +7,7 @@ import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { TaskCard } from "./TaskCard";
 import { taskCardProps } from "./TaskCard";
-import { IconButton, Typography } from "@mui/material";
+import { Grid2, IconButton, Typography } from "@mui/material";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
 import scrollHandler from "@/lib/utils";
@@ -62,14 +62,14 @@ export default function Tasks() {
   };
 
   return (
-    <Box sx={{ flexGrow: 1, padding: "0 0 2rem 0" }}>
+    <Box>
       <Box
         component="div"
         sx={{
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          marginBottom: "20px",
+          padding: "2rem",
         }}
       >
         <Typography
@@ -79,12 +79,11 @@ export default function Tasks() {
             fontSize: "1.5rem",
             fontWeight: "600",
             lineHeight: "150%",
-            margin: "2rem 2rem 1rem 2rem",
           }}
         >
           Time Limit
         </Typography>
-        <Box sx={{ display: "flex", gap: "0.5rem" }}>
+        <Box sx={{ display: { md: "flex", xs: "none" }, gap: "0.5rem" }}>
           <IconButton>
             <ArrowBackIosNewRoundedIcon
               onClick={handlePrev}
@@ -100,15 +99,13 @@ export default function Tasks() {
         </Box>
       </Box>
       <Box
-        className=""
+        className="overflow-scroll grid gap-y-3 md:justify-items-start justify-items-center md:grid-cols-5 lsm:grid-cols-2 grid-cols-1 no-scrollbar py-1"
         ref={cardsContainerRef}
         sx={{
           display: "flex",
-          gap: "3.5rem",
-          margin: "0 2rem",
-          "&::-webkit-scrollbar": {
-            display: "none",
-          },
+          gap: { md: "22rem" },
+          margin: { md: "0 0 0 2rem", xs: "0 1rem 0 1rem" },
+          maxWidth: { md: "calc(100vh-240px)" },
         }}
       >
         {DUMMYDATA.map((item) => (

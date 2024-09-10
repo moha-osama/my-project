@@ -7,8 +7,7 @@ export default function scrollHandler(
 ): void {
   if (cardsContainerRef.current && cardRef.current) {
     const cardWidth = cardRef.current.clientWidth;
-    const scrollAmount = cardWidth;
-
+    const scrollAmount = 400;
     cardsContainerRef.current.scrollBy({
       left: left ? -scrollAmount : scrollAmount,
       behavior: "smooth",

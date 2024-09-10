@@ -40,7 +40,7 @@ export default function RootLayout({
           <aside>
             <Aside />
           </aside>
-          <main className="md:ml-60 mt-48 px-4 w-full md:w-[calc(100%-240px)] bg-[#FAFAFA]">
+          <main className="md:ml-60 mt-48 w-full md:w-[calc(100%-240px)] bg-[#FAFAFA]">
             {children}
           </main>
           <NewTask />
