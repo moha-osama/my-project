@@ -10,7 +10,7 @@ import { taskCardProps } from "./TaskCard";
 import { Grid2, IconButton, Typography } from "@mui/material";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
 import ArrowBackIosNewRoundedIcon from "@mui/icons-material/ArrowBackIosNewRounded";
-import scrollHandler from "@/lib/utils";
+import { scrollHandler } from "@/lib/utils";
 
 type TaskCards = taskCardProps[];
 

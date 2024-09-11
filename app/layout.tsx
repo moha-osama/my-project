@@ -3,11 +3,11 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Header from "@/components/Header/Header";
 import Aside from "@/components/Aside/Aside";
-import { Provider } from "react-redux";
-import { hydrateRoot } from "react-dom/client";
 import StoreProvider from "./StoreProvider";
-import { Box } from "@mui/material";
 import NewTask from "@/components/Tasks/NewTask";
+import { Plus_Jakarta_Sans } from "next/font/google";
+
+const plus_Jakarta_Sans = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,7 +34,7 @@ export default function RootLayout({
     <StoreProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+          className={`${geistSans.variable} ${geistMono.variable} ${plus_Jakarta_Sans.className} antialiased relative`}
         >
           <Header />
           <aside>

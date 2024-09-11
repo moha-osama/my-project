@@ -21,6 +21,9 @@ const config: Config = {
       lg: "1200px",
       xl: "1536px",
     },
+    fontFamily: {
+      plusJakarta: ["var(--font-plus_Jakarta_Sans)"],
+    },
   },
   plugins: [],
 };

@@ -1,6 +1,13 @@
 import React from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  UserCredential,
+} from "firebase/auth";
+import { auth } from "@/firebase";
 
-export default function scrollHandler(
+export function scrollHandler(
   cardsContainerRef: React.RefObject<HTMLElement>,
   cardRef: React.RefObject<HTMLElement>,
   left?: boolean
@@ -14,3 +21,21 @@ export default function scrollHandler(
     });
   }
 }
+
+export const registerWithEmail = async (
+  email: string,
+  password: string
+): Promise<UserCredential> => {
+  return createUserWithEmailAndPassword(auth, email, password);
+};
+
+const loginWithEmail = async (
+  email: string,
+  password: string
+): Promise<UserCredential> => {
+  return signInWithEmailAndPassword(auth, email, password);
+};
+
+const logout = async (): Promise<void> => {
+  return signOut(auth);
+};
